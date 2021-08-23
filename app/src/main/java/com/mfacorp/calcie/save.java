@@ -1,5 +1,10 @@
 package com.mfacorp.calcie;
 
+import static android.content.Context.INPUT_METHOD_SERVICE;
+import static android.widget.Toast.LENGTH_SHORT;
+import static androidx.constraintlayout.widget.Constraints.TAG;
+import static com.google.android.material.snackbar.Snackbar.LENGTH_LONG;
+
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -25,11 +29,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Objects;
-
-import static android.content.Context.INPUT_METHOD_SERVICE;
-import static android.widget.Toast.LENGTH_SHORT;
-import static androidx.constraintlayout.widget.Constraints.TAG;
-import static com.google.android.material.snackbar.Snackbar.LENGTH_LONG;
 
 
 /**
@@ -67,17 +66,9 @@ public class save extends Fragment {
         populateListView();
 
 
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                populateListView();
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        swipeRefreshLayout.setRefreshing(false);
-                    }
-                },500);
-            }
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            populateListView();
+            new Handler().postDelayed(() -> swipeRefreshLayout.setRefreshing(false),500);
         });
 
 
@@ -85,39 +76,23 @@ public class save extends Fragment {
 
 
 
-        buSave.setOnClickListener(new View.OnClickListener() {
+        buSave.setOnClickListener(v12 -> {
 
-            @Override
-            public void onClick(View v) {
+            String newEntry = Objects.requireNonNull(etSave.getText()).toString();
+            if (etSave.length() != 0) {
+                AddData(newEntry);
 
-                String newEntry = Objects.requireNonNull(etSave.getText()).toString();
-                if (etSave.length() != 0) {
-                    AddData(newEntry);
-
-                    etSave.setText("");
-                } else {
-                    Snackbar.make(requireActivity().findViewById(android.R.id.content),
-                            "Nothing is there to save", LENGTH_LONG).show();
-                }
-                InputMethodManager inputMethodManager = (InputMethodManager) requireActivity().getSystemService(INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(requireView().getWindowToken(), 0);
-                populateListView();
+                etSave.setText("");
+            } else {
+                Snackbar.make(requireActivity().findViewById(android.R.id.content),
+                        "Nothing is there to save", LENGTH_LONG).show();
             }
-
+            InputMethodManager inputMethodManager = (InputMethodManager) requireActivity().getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(requireView().getWindowToken(), 0);
+            populateListView();
         });
 
-        buView.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                populateListView();
-
-            }
-
-
-
-
-        });
+        buView.setOnClickListener(v1 -> populateListView());
 
 
 
@@ -155,31 +130,28 @@ public class save extends Fragment {
 
 
         //set an onItemClickListener to the ListView
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String name = adapterView.getItemAtPosition(i).toString();
-                Log.d(TAG, "onItemClick: You Clicked on " + name);
+        mListView.setOnItemClickListener((adapterView, view, i, l) -> {
+            String name = adapterView.getItemAtPosition(i).toString();
+            Log.d(TAG, "onItemClick: You Clicked on " + name);
 
-                Cursor data = mDatabaseHelper.getItemID(name); //get the id associated with that name
-                int itemID = -1;
-                while(data.moveToNext()){
-                    itemID = data.getInt(0);
-                }
-                if(itemID > -1){
-                    Log.d(TAG, "onItemClick: The ID is: " + itemID);
-                    MyCustomDialog dialog = new MyCustomDialog();
-                    assert getFragmentManager() != null;
-                    dialog.show(getFragmentManager(),"MyCustomDialog");
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("itemID", itemID);
-                    bundle.putString("name", name);
-                    dialog.setArguments(bundle);
+            Cursor data1 = mDatabaseHelper.getItemID(name); //get the id associated with that name
+            int itemID = -1;
+            while(data1.moveToNext()){
+                itemID = data1.getInt(0);
+            }
+            if(itemID > -1){
+                Log.d(TAG, "onItemClick: The ID is: " + itemID);
+                MyCustomDialog dialog = new MyCustomDialog();
+                assert getFragmentManager() != null;
+                dialog.show(getFragmentManager(),"MyCustomDialog");
+                Bundle bundle = new Bundle();
+                bundle.putInt("itemID", itemID);
+                bundle.putString("name", name);
+                dialog.setArguments(bundle);
 
-                }
-                else{
-                    toastMessage("No ID associated with that name");
-                }
+            }
+            else{
+                toastMessage("No ID associated with that name");
             }
         });
     }
