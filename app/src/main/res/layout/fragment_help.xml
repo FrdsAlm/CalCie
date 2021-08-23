@@ -41,9 +41,9 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView3"
+                style="@style/cardStyle"
                 android:layout_width="match_parent"
-                android:layout_height="255dp"
-               style="@style/cardStyle"
+                android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -61,22 +61,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="76dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/asset1"
-                        />
+                        android:src="@drawable/asset1" />
 
                     <ImageView
                         android:id="@+id/imageView2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="185dp"
+                        android:scaleType="fitStart"
                         android:src="@drawable/tgrades" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
                 style="@style/cardStyle"
-                android:layout_height="380dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +85,7 @@
                 <LinearLayout
                     android:id="@+id/linearLayout2"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="180dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -97,9 +97,9 @@
 
                     <ImageView
                         android:id="@+id/imageView4"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:scaleType="centerCrop"
+                        android:scaleType="fitStart"
                         android:src="@drawable/gpscale" />
                 </LinearLayout>
 
@@ -109,7 +109,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="380dp"
+                android:layout_height="wrap_content"
                 style="@style/cardStyle"
                 app:cardCornerRadius="8dp"
                 >
@@ -117,7 +117,7 @@
                 <LinearLayout
                     android:id="@+id/linearLayout3"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <ImageView
@@ -130,8 +130,8 @@
                     <ImageView
                         android:id="@+id/imageView6"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:scaleType="centerCrop"
+                        android:layout_height="114dp"
+                        android:scaleType="fitStart"
                         android:src="@drawable/pereqv" />
                 </LinearLayout>
 
