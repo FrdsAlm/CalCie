@@ -1,4 +1,7 @@
 package com.mfacorp.calcie;
+
+import static android.content.Context.INPUT_METHOD_SERVICE;
+
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -8,16 +11,16 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 import com.ramotion.fluidslider.FluidSlider;
+
 import org.jetbrains.annotations.NotNull;
-import java.util.Objects;
-import androidx.fragment.app.Fragment;
+
 import kotlin.Unit;
-
-import static android.content.Context.INPUT_METHOD_SERVICE;
-
 
 
 /**
@@ -31,11 +34,6 @@ public class calc extends Fragment {
      EditText etT1,etT2;
      TextInputLayout layoutT1,layoutT2;
      MaterialButton buRefresh,fab;
-    private Bundle savedState = null;
-
-
-
-
 
 
     public calc() {
@@ -47,12 +45,7 @@ public class calc extends Fragment {
     @Override
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
         View v=inflater.inflate(R.layout.fragment_calc, container, false);
-
-
-
-
 
         tvQ1 =v.findViewById(R.id.tvQ1);
         tvQ2=v. findViewById(R.id.tvQ2);
@@ -72,12 +65,6 @@ public class calc extends Fragment {
         etT2=v.findViewById(R.id.etTest2);
         layoutT1=v.findViewById(R.id.layoutT1);
         layoutT2=v.findViewById(R.id.layoutT2);
-
-
-
-
-
-
 
 
         //code for test 1 edittext
@@ -103,7 +90,7 @@ public class calc extends Fragment {
                     {
                         layoutT1.setErrorEnabled(false);
                         credits= (int) Math.ceil(marks/2.94);
-                        tvT1.setText(String.valueOf(credits +" Credits"));
+                        tvT1.setText(credits + " Credits");
                     }
                     else
                     {
@@ -149,7 +136,7 @@ public class calc extends Fragment {
                     {
                         layoutT2.setErrorEnabled(false);
                         credits= (int) Math.ceil(marks/2.94);
-                        tvT2.setText(String.valueOf(credits +" Credits"));
+                        tvT2.setText(credits + " Credits");
                     }
                     else
                     {
@@ -168,8 +155,8 @@ public class calc extends Fragment {
                 if(etT2.getText().toString().length()==2)
                 {
 
-                    InputMethodManager inputMethodManager = (InputMethodManager) Objects.requireNonNull(getActivity()).getSystemService(INPUT_METHOD_SERVICE);
-                    inputMethodManager.hideSoftInputFromWindow(Objects.requireNonNull(getView()).getWindowToken(), 0);
+                    InputMethodManager inputMethodManager = (InputMethodManager) requireActivity().getSystemService(INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(requireView().getWindowToken(), 0);
                 }
             }
         });
@@ -197,7 +184,7 @@ public class calc extends Fragment {
             sliderQ1.setBubbleText(value);
             float marks =Integer.parseInt(value);
             int credits = (int) Math.ceil(marks/5);
-            tvQ1.setText("Q1 \n"+String.valueOf(credits)+ " Credits");
+            tvQ1.setText("Q1 \n"+ credits + " Credits");
             return Unit.INSTANCE;
 
         });
@@ -230,7 +217,7 @@ public class calc extends Fragment {
             sliderQ2.setBubbleText(value);
             float marks =Integer.parseInt(value);
             int credits = (int) Math.ceil(marks/5);
-            tvQ2.setText("Q2 \n"+String.valueOf(credits)+ " Credits");
+            tvQ2.setText("Q2 \n"+ credits + " Credits");
             return Unit.INSTANCE;
 
         });
@@ -262,7 +249,7 @@ public class calc extends Fragment {
             sliderQ3.setBubbleText(value);
             float marks =Integer.parseInt(value);
             int credits = (int) Math.ceil(marks/5);
-            tvQ3.setText("Q3 \n"+String.valueOf(credits)+ " Credits");
+            tvQ3.setText("Q3 \n"+ credits + " Credits");
             return Unit.INSTANCE;
 
         });
@@ -403,6 +390,7 @@ public class calc extends Fragment {
 
                 total=q1cr+q2cr+q3cr+q4cr+t1cr+t2cr+AssM;
                 bottomSheetDialog bottomsheet=new bottomSheetDialog();
+                assert getFragmentManager() != null;
                 bottomsheet.show(getFragmentManager(),"bottom_sheet");
                 Bundle bundle = new Bundle();
                 String result=String.valueOf(total);
@@ -412,12 +400,7 @@ public class calc extends Fragment {
             }
         });
 
-        buRefresh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                defaultState();
-            }
-        });
+        buRefresh.setOnClickListener(v1 -> defaultState());
 
         return v;
 
