@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="@string/textview"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,9 +26,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
-        android:text="Close"
+        android:text="@string/close"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:ignore="TextContrastCheck" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buSave"
@@ -39,7 +40,8 @@
         android:layout_marginEnd="20dp"
         android:text="Save"
         app:layout_constraintEnd_toStartOf="@+id/buClose"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:ignore="TextContrastCheck" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layBottomSheet"
