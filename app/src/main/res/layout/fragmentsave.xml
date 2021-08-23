@@ -30,7 +30,7 @@
             android:paddingTop="9dp"
             android:paddingEnd="35dp"
             android:paddingBottom="5dp"
-            android:text="Save and View"
+            android:text="@string/save_and_view"
             android:textAlignment="center" />
     </androidx.cardview.widget.CardView>
 
@@ -52,7 +52,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Test or Quiz + Sub Name + Credits" />
+            android:hint="@string/enter_test_or_quiz_sub_name_credits" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
@@ -62,7 +62,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Refresh list"
+        android:text="@string/refresh_list"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.749"
@@ -76,7 +76,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="save data"
+        android:text="@string/save_data"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toStartOf="@+id/buView"
         app:layout_constraintHorizontal_bias="0.806"

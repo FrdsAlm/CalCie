@@ -61,7 +61,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="76dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/asset1" />
+                        android:src="@drawable/asset1"
+                        android:contentDescription="@string/design" />
 
                     <ImageView
                         android:id="@+id/imageView2"

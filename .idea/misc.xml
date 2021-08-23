@@ -9,9 +9,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/mfala/AppWithKot/CalCie/app/src/main/res/layout/fragment_share.xml" value="0.15789473684210525" />
+        <entry key="..\:/Users/mfala/CalCie/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.2" />
+        <entry key="..\:/Users/mfala/CalCie/app/src/main/res/layout/dialog_my_custom.xml" value="0.15789473684210525" />
         <entry key="..\:/Users/mfala/CalCie/app/src/main/res/layout/fragment_about.xml" value="0.15789473684210525" />
+        <entry key="..\:/Users/mfala/CalCie/app/src/main/res/layout/fragment_calc.xml" value="0.2" />
         <entry key="..\:/Users/mfala/CalCie/app/src/main/res/layout/fragment_help.xml" value="0.15789473684210525" />
         <entry key="..\:/Users/mfala/CalCie/app/src/main/res/layout/fragment_share.xml" value="0.15789473684210525" />
+        <entry key="..\:/Users/mfala/CalCie/app/src/main/res/layout/fragmentsave.xml" value="0.15789473684210525" />
       </map>
     </option>
   </component>
