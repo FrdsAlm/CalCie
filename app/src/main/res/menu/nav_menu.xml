@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Calculator"
+        android:title="Calculate"
+        android:icon="@drawable/ic_calculate" />
+    <item
+        android:id="@+id/saved"
+        android:title="Saved"
+        android:icon="@drawable/ic_save" />
+
+    <item
+        android:id="@+id/help"
+        android:title="Help"
+        android:icon="@drawable/ic_help" />
+
+    <item
+        android:id="@+id/about"
+        android:title="About Dev"
+        android:icon="@drawable/ic_about" />
+
+    <item
+        android:id="@+id/share"
+        android:title="Share"
+        android:icon="@drawable/ic_share" />
+
+</menu>

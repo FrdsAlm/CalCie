@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#536DFE</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#536DFE</color>
+    <color name="primary_light">#E1BEE7</color>
+    <color name="colorInactive">#757575</color>
+    <color name="headTextcol">#212121</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="about_card_col">#007BF7</color>
+    <color name="about_bu_col">#FF673A</color>
+</resources>

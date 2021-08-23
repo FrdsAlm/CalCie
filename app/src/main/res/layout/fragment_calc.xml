@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/swipe"
+    android:background="@color/colorPrimaryDark"
+    android:windowSoftInputMode="adjustNothing"
+    tools:context=".calc">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/headerTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="35dp"
+                android:paddingTop="9dp"
+                android:paddingEnd="35dp"
+                android:paddingBottom="5dp"
+                android:text="@string/CalCie"
+                android:textAlignment="center" />
+        </androidx.cardview.widget.CardView>
+
+
+        <com.ramotion.fluidslider.FluidSlider
+            android:id="@+id/sliderQ2"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="49dp"
+            app:bar_color="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/sliderQ4"
+            app:layout_constraintEnd_toEndOf="@+id/sliderQ4"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/sliderQ1"
+            app:layout_constraintStart_toStartOf="@+id/sliderQ4"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:size="small" />
+
+        <com.ramotion.fluidslider.FluidSlider
+            android:id="@+id/sliderQ4"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginTop="48dp"
+            app:bar_color="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@+id/layoutT2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/layoutT2"
+            app:layout_constraintTop_toBottomOf="@+id/sliderQ2"
+            app:size="small" />
+
+        <com.ramotion.fluidslider.FluidSlider
+            android:id="@+id/sliderQ3"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+
+            android:layout_marginTop="48dp"
+            app:bar_color="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@+id/layoutT1"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/layoutT1"
+            app:layout_constraintTop_toBottomOf="@+id/sliderQ1"
+            app:size="small" />
+
+        <com.ramotion.fluidslider.FluidSlider
+            android:id="@+id/sliderQ1"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="47dp"
+            android:padding="10dp"
+            app:bar_color="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/sliderQ3"
+            app:layout_constraintEnd_toEndOf="@+id/sliderQ3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/sliderQ3"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:size="small" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutT1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="158dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="56dp"
+            app:errorEnabled="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sliderQ3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTest1"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:ems="10"
+                android:hint="@string/test_1"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="2"
+                android:nextFocusDown="@+id/etTest2"
+                android:singleLine="true"
+                android:textAlignment="center" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutT2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="158dp"
+            android:layout_height="79dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="20dp"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sliderQ4">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTest2"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:ems="10"
+                android:hint="@string/test_2"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="2"
+                android:singleLine="true"
+                android:textAlignment="center" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.ramotion.fluidslider.FluidSlider
+            android:id="@+id/sliderAss"
+            android:layout_width="185dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="8dp"
+            app:bar_color="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutT2"
+            app:size="small" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buRef"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cornerRadius="18dp"
+            app:icon="@drawable/ic_refresh"
+            app:layout_constraintEnd_toStartOf="@+id/buSave"
+            app:layout_constraintHorizontal_bias="0.981"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sliderAss"
+            app:layout_dodgeInsetEdges="bottom" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buSave"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/add_all"
+            app:cornerRadius="18dp"
+            app:icon="@drawable/sigma"
+            app:iconPadding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.629"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sliderAss"
+            app:layout_dodgeInsetEdges="bottom" />
+
+
+        <TextView
+            android:id="@+id/tvTest1"
+            style="@style/CalcTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="31dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/test_1"
+            app:layout_constraintBottom_toTopOf="@+id/layoutT1"
+            app:layout_constraintEnd_toEndOf="@+id/layoutT1"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toStartOf="@+id/layoutT1"
+            app:layout_constraintTop_toBottomOf="@+id/sliderQ3" />
+
+        <TextView
+            android:id="@+id/tvTest2"
+            style="@style/CalcTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="31dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/test_2"
+            app:layout_constraintBottom_toTopOf="@+id/layoutT2"
+            app:layout_constraintEnd_toEndOf="@+id/layoutT2"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toStartOf="@+id/layoutT2"
+            app:layout_constraintTop_toBottomOf="@+id/sliderQ4" />
+
+        <TextView
+            android:id="@+id/tvQ1"
+            style="@style/CalcTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/quiz_1_slider"
+            app:layout_constraintEnd_toEndOf="@+id/sliderQ1"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/sliderQ1"
+            app:layout_constraintTop_toTopOf="@+id/sliderQ1" />
+
+        <TextView
+            android:id="@+id/tvQ2"
+            style="@style/CalcTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/quiz_2_slider"
+            app:layout_constraintEnd_toEndOf="@+id/sliderQ2"
+            app:layout_constraintStart_toStartOf="@+id/sliderQ2"
+            app:layout_constraintTop_toTopOf="@+id/sliderQ2" />
+
+
+        <TextView
+            android:id="@+id/tvQ3"
+            style="@style/CalcTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/quiz_3_slider"
+            app:layout_constraintEnd_toEndOf="@+id/sliderQ3"
+            app:layout_constraintStart_toStartOf="@+id/sliderQ3"
+            app:layout_constraintTop_toTopOf="@+id/sliderQ3" />
+
+        <TextView
+            android:id="@+id/tvQ4"
+            style="@style/CalcTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/quiz_4_slider"
+            app:layout_constraintEnd_toEndOf="@+id/sliderQ4"
+            app:layout_constraintStart_toStartOf="@+id/sliderQ4"
+            app:layout_constraintTop_toTopOf="@+id/sliderQ4" />
+
+        <TextView
+            android:id="@+id/tvAss"
+            style="@style/CalcTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/assignment"
+            app:layout_constraintEnd_toEndOf="@+id/sliderAss"
+            app:layout_constraintStart_toStartOf="@+id/sliderAss"
+            app:layout_constraintTop_toTopOf="@+id/sliderAss" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</ScrollView>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">CalCie</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="CalCie">CalCie</string>
+    <string name="save">Saved CIE\'s</string>
+    <string name="about">About developer</string>
+    <string name="help">Law\'s of the land</string>
+    <string name="share">Share the goodness</string>
+    <string name="quiz_1">Q1</string>
+    <string name="quiz_2">Q2</string>
+    <string name="quiz_3">Q3</string>
+    <string name="quiz_4">Q4</string>
+    <string name="action_settings">Settings</string>
+    <string name="activity_title_home">Notes</string>
+    <string name="msg_no_notes">No notes found!</string>
+    <string name="lbl_new_note_title">New Note</string>
+    <string name="lbl_edit_note_title">Edit Note</string>
+    <string name="hint_enter_note">Enter your note!</string>
+    <string name="Helper_text">This app is specially made for SIT students.\n\nSlide sliders to select quiz marks\n\nNo average is done between quiz 2 and 3 while adding credits\n\nFor test credit calculation .34 is the multiplier used\n\nEx. 17/.34=50 so if your get 28 marks then\nyour credits are 28X .34=9.52 ~ 10 credits\n</string>
+    <string name="about_me">Hi, I am Firdous Alam (IEM 3rd year, SIT Tumakuru). I am a hobbyist Graphic and UI designer and a huge android enthusiast. Apart from all this i like to read anything and everything from newspaper to memes to thousands so line of reddit threads(occasionally books). Mail me if you want me to work with me on any project.</string>
+    <string name="add_all">add all</string>
+    <string name="test_2">Test 2</string>
+    <string name="test_1">Test 1</string>
+    <string name="assignment">Assignment</string>
+    <string name="quiz_4_slider">Quiz 4</string>
+    <string name="quiz_3_slider">Quiz 3</string>
+    <string name="quiz_2_slider">Quiz 2</string>
+    <string name="quiz_1_slider">Quiz 1</string>
+    <string name="share_the_app_with_your_firends">Share the app with your firends</string>
+</resources>
